@@ -10,11 +10,11 @@
 <ion-content>
 
     <div *ngIf="details">
-      <ion-slides pager="true" [options]="slideOpts">
-        <ion-slide *ngFor="let sprite of details.images">
-          <img [src]="sprite" style="height: 250px;">
-        </ion-slide>
-      </ion-slides>
+      <swiper #swiper [config]="config" [allowTouchMove]="false">
+        <ng-template swiperSlide *ngFor="let sprite of details.images | slice:0:4; let i=index;">
+          <img [src]="image" [lazyLoad]="details.images[details.images.length - 3 - i]" style="height: 250px; display: block; margin: 0 auto;">
+        </ng-template>
+      </swiper>
 
       <ion-card>
         <ion-card-header>

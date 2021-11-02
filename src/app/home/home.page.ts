@@ -32,9 +32,9 @@ export class HomePage implements OnInit {
       }
 
       // Optional
-      if (this.offset == 125) {
-        this.infinite.disabled = true;
-      }
+      //if (this.offset == 125) {
+      //this.infinite.disabled = true;
+      //}
     })
   }
 
@@ -46,7 +46,7 @@ export class HomePage implements OnInit {
       this.loadPokemon();
       return;
     }
-
+    
     this.pokeService.findPokemon(value).subscribe(res => {
       this.pokemon = [res]
     }, err => {

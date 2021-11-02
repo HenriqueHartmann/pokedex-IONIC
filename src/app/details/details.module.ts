@@ -8,12 +8,17 @@ import { DetailsPageRoutingModule } from './details-routing.module';
 
 import { DetailsPage } from './details.page';
 
+import { SwiperModule } from 'swiper/angular';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DetailsPageRoutingModule
+    DetailsPageRoutingModule,
+    SwiperModule,
+    LazyLoadImageModule,
   ],
   declarations: [DetailsPage]
 })
